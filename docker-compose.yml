@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  flask-backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      MONGO_URI: "mongodb+srv://maityabir040:B3-TUNaNuQjyt!J@cluster0.o9ynclx.mongodb.net/notes_app?retryWrites=true&w=majority&appName=Cluster0"
+      FLASK_APP: app.py
+      FLASK_ENV: development
+      SECRET_KEY: "secret_key"
+      JWT_SECRET_KEY: "secret_key"
+      GEMINI_API_KEY: "AIzaSyAgPE0HUIiLbF8NTx3Af04SR7UptUlYeSg" 
+      GEMINI_MODEL_NAME: "gemini-2.0-flash"
+    volumes:
+      - ./backend:/app

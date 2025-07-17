@@ -1,0 +1,303 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-color: #f4f4f4;
+    color: #333;
+}
+h1 {
+    color: #3498db;
+    text-align: center;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Initial state for auth forms and notes section */
+#login-form-container {
+    display: none;
+}
+
+#notes-app-section {
+    display: none;
+}
+
+
+/* Auth Form Styling */
+.auth-form {
+    margin-bottom: 30px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+.auth-form h2 {
+    color: #3498db;
+    margin-top: 0;
+}
+.auth-form label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+.auth-form input[type="text"],
+.auth-form input[type="password"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.auth-form button {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    margin-top: 10px;
+}
+.auth-form button:hover {
+    background-color: #0056b3;
+}
+.auth-form p {
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+.auth-form a {
+    color: #007bff;
+    text-decoration: none;
+}
+.auth-form a:hover {
+    text-decoration: underline;
+}
+
+/* Notes App Section Header */
+.header-with-logout {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+.header-with-logout h2 {
+    margin: 0;
+    color: #3498db;
+}
+.header-with-logout button {
+    background-color: #6c757d;
+    color: white;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.header-with-logout button:hover {
+    background-color: #5a6268;
+}
+
+
+/* Existing styles for notes-list, note-item, etc. */
+.note-form {
+    margin-bottom: 30px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+.note-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+.note-form input[type="text"],
+.note-form textarea {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1em;
+}
+.note-form button {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+}
+.note-form button:hover {
+    background-color: #218838;
+}
+
+/* New voice input button styling */
+.voice-input-btn {
+    background-color: #f0ad4e !important; /* Orange */
+    margin-left: 10px;
+}
+.voice-input-btn:hover {
+    background-color: #ec971f !important;
+}
+.voice-input-btn:disabled {
+    background-color: #cccccc !important;
+    cursor: not-allowed;
+}
+
+
+.notes-list {
+    list-style: none;
+    padding: 0;
+}
+.note-item {
+    background-color: #ffffff;
+    border: 1px solid #e0e0e0;
+    margin-bottom: 15px;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.note-item h3 {
+    margin-top: 0;
+    color: #007bff;
+}
+.note-item p {
+    margin-bottom: 10px;
+}
+.note-item .actions button {
+    background-color: #ffc107;
+    color: #333;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 8px;
+}
+.note-item .actions button.delete-btn {
+    background-color: #dc3545;
+    color: white;
+}
+.note-item .actions button:hover {
+    opacity: 0.9;
+}
+.note-item .edit-fields {
+    display: none;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+.note-item .edit-fields.active {
+    display: block;
+}
+.note-item .edit-fields input,
+.note-item .edit-fields textarea {
+    width: calc(100% - 10px);
+    padding: 8px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+.note-item .edit-fields button {
+    background-color: #007bff;
+    color: white;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.9em;
+    margin-right: 5px;
+}
+.note-item .edit-fields button.cancel-btn {
+    background-color: #6c757d;
+}
+
+.error-message {
+    color: red;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: none;
+}
+
+#loading-message {
+    display: none;
+    font-weight: bold;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+/* AI Modal Styling (from previous step, ensuring consistency) */
+#ai-modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+#ai-modal-content {
+    background-color: #fefefe;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be responsive */
+    max-width: 600px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+    position: relative;
+}
+
+#ai-modal-content h2 {
+    margin-top: 0;
+    color: #3498db;
+    padding-right: 30px; /* Space for close button */
+}
+
+#ai-modal-content #ai-modal-body {
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+    max-height: 400px;
+    overflow-y: auto;
+}
+
+#ai-modal-content #ai-modal-body p {
+    margin-bottom: 10px;
+    line-height: 1.5;
+}
+
+#ai-modal-content #ai-modal-body strong {
+    color: #007bff;
+}
+
+#ai-modal-content .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    cursor: pointer;
+}
+#ai-modal-content .close:hover,
+#ai-modal-content .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}

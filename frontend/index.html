@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Notes App</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>My Notes App</h1>
+
+        <!-- Authentication Section -->
+        <div id="auth-section">
+            <div class="auth-form" id="register-form-container">
+                <h2>Register</h2>
+                <div id="register-error-message" class="error-message"></div>
+                <label for="register-username">Username:</label>
+                <input type="text" id="register-username" required>
+                <label for="register-password">Password:</label>
+                <input type="password" id="register-password" required>
+                <button id="register-btn">Register</button>
+                <p>Already have an account? <a href="#" id="show-login">Login here</a></p>
+            </div>
+
+            <div class="auth-form" id="login-form-container">
+                <h2>Login</h2>
+                <div id="login-error-message" class="error-message"></div>
+                <label for="login-username">Username:</label>
+                <input type="text" id="login-username" required>
+                <label for="login-password">Password:</label>
+                <input type="password" id="login-password" required>
+                <button id="login-btn">Login</button>
+                <p>Don't have an account? <a href="#" id="show-register">Register here</a></p>
+            </div>
+        </div>
+
+        <!-- Notes Section (Hidden until authenticated) -->
+        <div id="notes-app-section">
+            <div class="header-with-logout">
+                <h2>Welcome, <span id="current-username"></span>!</h2>
+                <button id="logout-btn">Logout</button>
+            </div>
+
+            <div class="note-form">
+                <h3>Add New Note</h3>
+                <div id="add-error-message" class="error-message"></div>
+                <label for="new-note-title">Title:</label>
+                <input type="text" id="new-note-title" placeholder="Enter note title" required>
+
+                <label for="new-note-content">Content:</label>
+                <textarea id="new-note-content" placeholder="Enter note content" rows="5" required></textarea>
+
+                <button id="add-note-btn">Add Note</button>
+                <button id="voice-input-btn" class="voice-input-btn">Voice Input</button>
+                <span id="recording-status" style="display:none; color: #007bff; margin-left: 10px;">Recording...</span>
+                <span id="transcribing-status" style="display:none; color: #ffc107; margin-left: 10px;">Transcribing...</span>
+            </div>
+
+            <h3>Your Notes</h3>
+            <div id="loading-message">Loading notes...</div>
+            <div id="fetch-error-message" class="error-message"></div>
+            <ul id="notes-list" class="notes-list">
+                <!-- Notes will be loaded here by JavaScript -->
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.0/socket.io.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
